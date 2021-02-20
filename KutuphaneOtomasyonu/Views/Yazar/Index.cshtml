@@ -1,0 +1,32 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Yazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>YAZARLAR</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>HAKKINDA</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>YAZARIN KİTAPLARI</th>
+    </tr>
+    @foreach (var y in Model)
+    {
+        <tr>
+            <td>@y.Id</td>
+            <td>@y.Ad</td>
+            <td>@y.Soyad</td>
+            <td>@y.Hakkında</td>
+            <td>@Html.ActionLink("Sil","YazarSil",new { id = y.Id },new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Yazar/YazarGetir/@y.Id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Yazar/YazarKitaplar/@y.Id" class="btn btn-warning">Yazarın Kitapları</a></td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" href="/Yazar/YazarEkle/">Yazar Ekle</a>

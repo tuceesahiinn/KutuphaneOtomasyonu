@@ -1,0 +1,28 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Duyuru>
+
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>DUYURULAR</h2>
+<table class="table table-striped">
+    <tr>
+        <th>KATEGORİ</th>
+        <th>İÇERİK</th>
+        <th>TARİH</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Kategori</td>
+            <td>@k.Icerik</td>
+            <td>@Convert.ToDateTime(k.Tarih).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+
+
+

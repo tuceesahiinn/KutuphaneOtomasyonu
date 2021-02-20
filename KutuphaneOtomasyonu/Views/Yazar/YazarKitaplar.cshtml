@@ -1,0 +1,29 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Kitap>
+@{
+    ViewBag.Title = "YazarKitaplar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>@ViewBag.y1</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>KATEGORİ</th>
+        <th>YAYINEVİ</th>
+    </tr>
+    @foreach (var y in Model)
+    {
+        <tr>
+            <td>@y.Id</td>
+            <td>@y.Ad</td>
+            <td>@y.Kategori</td>
+            <td>@y.YayınEvi</td>
+        </tr>
+    }
+</table>
+
+
+

@@ -1,0 +1,29 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Kategori> 
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>KATEGORİLER</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach(var ktg in Model)
+    {
+        <tr>
+            <td>@ktg.Id</td>
+            <td>@ktg.Ad</td>
+            <td><a href="/Kategori/KategoriSil/@ktg.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kategori/KategoriGetir/@ktg.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+     }
+</table>
+<a href="/Kategori/KategoriEkle/" class="btn btn-primary">Kategori Ekle</a>
+
+

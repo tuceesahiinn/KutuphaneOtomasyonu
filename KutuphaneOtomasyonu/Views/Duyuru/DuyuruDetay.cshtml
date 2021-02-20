@@ -1,0 +1,28 @@
+﻿@model KutuphaneOtomasyonu.Models.Entity.Duyuru
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+@using (Html.BeginForm("DuyuruGüncelle", "Duyuru", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.Id)
+        @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        <br />
+        <label>Kategori</label>
+        @Html.TextBoxFor(k => k.Kategori, new { @class = "form-control" })
+        <br />
+        <label>İçerik</label>
+        @Html.TextAreaFor(k => k.Icerik, new { @class = "form-control" })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(k => k.Tarih, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

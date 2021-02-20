@@ -1,0 +1,49 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Kitap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>KİTAPLAR</h2>
+
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak kitap adını giriniz: &nbsp;</b> @Html.TextBox("p")
+            <input type="submit" value="Ara"/>
+    </div>
+
+}
+
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>KATEGORİ</th>
+        <th>YAZAR</th>
+        <th>BASIM YILI</th>
+        <th>YAYIN EVİ</th>
+        <th>SAYFA SAYISI</th>
+        <th>DURUM</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Id</td>
+            <td>@k.Ad</td>
+            <td>@k.Kategori1.Ad</td>
+            <td>@k.Yazar1.Ad&nbsp @k.Yazar1.Soyad</td>
+            <td>@k.BasımYılı</td>
+            <td>@k.YayınEvi</td>
+            <td>@k.SayfaSayisi</td>
+            <td>@k.Durum</td>
+            <td><a href="/Kitap/KitapSil/@k.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kitap/KitapGetir/@k.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/KitapEkle/" class="btn btn-primary">Kitap Ekle</a>

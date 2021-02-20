@@ -1,0 +1,26 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Mesaj>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Gelen Kutusu</h2>
+
+<table class="table table-bordered" >
+    <tr>
+        <td>GÖNDEREN</td>
+        <td>KONU</td>
+        <td>MESAJ</td>
+        <td>Tarih</td>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.Gonderen</td>
+            <td>@x.Konu</td>
+            <td>@x.Icerik</td>
+            <td>@x.Tarih</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,45 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@using PagedList
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Uyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>ÜYELER</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>MAİL</th>
+        <th>KULLANICI ADI</th>
+        <th>ŞİFRE</th>
+        <th>TELEFON</th>
+        <th>OKUL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>KİTAP GEÇMİŞİ</th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>@uye.Id</td>
+            <td>@uye.Ad</td>
+            <td>@uye.Soyad</td>
+            <td>@uye.Mail</td>
+            <td>@uye.KullaniciAdi</td>
+            <td>@uye.Sifre</td>
+            <td>@uye.Telefon</td>
+            <td>@uye.Okul</td>
+            <td><a href="/Üye/ÜyeSil/@uye.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Üye/ÜyeGetir/@uye.Id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Üye/ÜyeGeçmiş/@uye.Id" class="btn btn-warning">Kitap Geçmişi</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa }))
+<a href="/Üye/ÜyeEkle/" class="btn btn-primary">Üye Ekle</a>
+
+

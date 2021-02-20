@@ -1,0 +1,27 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>PERSONELLER</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var prs in Model)
+    {
+        <tr>
+            <td>@prs.Id</td>
+            <td>@prs.Personel1</td>
+            <td><a href="/Personel/PersonelSil/@prs.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@prs.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle/" class="btn btn-primary">Personel Ekle</a>
+

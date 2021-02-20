@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0e760009e56248feab560d756fcca7b6" Name="Diagram1">
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Ceza" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Hareket" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kasa" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kategori" Width="1.5" PointX="1.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kitap" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Personel" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Uyeler" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Yazar" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Ceza_Hareket" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Ceza_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Hareket_Kitap" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Hareket_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Hareket_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kitap_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kitap_Yazar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Hakkımızda" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Iletisim" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Mesaj" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Duyuru" Width="1.5" PointX="8.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

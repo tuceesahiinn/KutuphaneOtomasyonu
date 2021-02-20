@@ -1,0 +1,25 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Hareket>
+@{
+    ViewBag.Title = "Kitaplarım";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>GEÇMİŞ</h2>
+<table class="table table-striped">
+    <tr>
+        <th>KİTAP ADI</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>TESLİM TARİHİ</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Kitap1.Ad</td>
+            <td>@Convert.ToDateTime(k.AlisTarihi).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.TeslimTarihi).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+

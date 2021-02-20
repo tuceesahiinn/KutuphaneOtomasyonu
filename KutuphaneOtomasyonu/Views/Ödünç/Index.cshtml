@@ -1,0 +1,32 @@
+﻿@using KutuphaneOtomasyonu.Models.Entity
+@model List<Hareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>ÖDÜNÇ KİTAP LİSTESİ</h2>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>ÜYE ADI</th>
+        <th>PERSONEL ADI</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>İADE TARİHİ</th>
+        <th>İADE AL</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Id</td>
+            <td>@k.Kitap1.Ad</td>
+            <td>@k.Uyeler.Ad&nbsp @k.Uyeler.Soyad</td>
+            <td>@k.Personel1.Personel1</td>
+            <td>@Convert.ToDateTime(k.AlisTarihi).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.IadeTarihi).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Ödünç/Ödünçİade/@k.Id" class="btn btn-default" style="background-color:#ff6a00; color:white" >Kitabı İade Et</a></td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,39 @@
+﻿@model  KutuphaneOtomasyonu.Models.Entity.Hareket
+@{
+    ViewBag.Title = "ÖdünçVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>ÖDÜNÇ KİTAP VER</h2>
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Üye</label>
+        @*@Html.TextBoxFor(k => k.Uye, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.Uyeler.Id, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap</label>
+        @*@Html.TextBoxFor(k => k.Kitap, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.Kitap1.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Personel</label>
+        @*@Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.Personel1.Id, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Alış Tarihi</label>
+        <input type="text" class="form-control" name="AlisTarihi" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap İade Tarihi</label>
+        <input type="text" class="form-control" name="IadeTarihi" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ödünç Ver</button>
+        <input type="hidden" value="False" name="IslemDurum"/>
+    </div>
+</form>
+

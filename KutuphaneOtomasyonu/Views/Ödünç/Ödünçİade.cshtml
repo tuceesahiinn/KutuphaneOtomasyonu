@@ -1,0 +1,41 @@
+﻿@model KutuphaneOtomasyonu.Models.Entity.Hareket
+@{
+    ViewBag.Title = "Ödünçİade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<h2>KİTAP İADE SAYFASI</h2>
+@using (Html.BeginForm("ÖdünçGüncelle", "Ödünç", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Id</label>
+        @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(k => k.Kitap1.Ad, new { @class = "form-control" })
+        <br />
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(k => k.Uyeler.Ad, new { @class = "form-control" })
+        <br />
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(k => k.Personel1.Personel1, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(k => k.AlisTarihi, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>İade Tarihi</label>
+        @Html.TextBoxFor(k => k.IadeTarihi, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Teslim Tarihi</label>
+        <input type="text" class="form-control" name="TeslimTarihi" value="@DateTime.Now.ToShortDateString()"/>
+        <br />
+        <label>Geçmiş Gün Sayısı</label>
+        <input type="text" class="form-control" id="gecInput" value="@ViewBag.dgr"/>
+    </div>
+    <div>
+        <button class="btn btn-info">İade Al</button>
+    </div>
+}
+
+

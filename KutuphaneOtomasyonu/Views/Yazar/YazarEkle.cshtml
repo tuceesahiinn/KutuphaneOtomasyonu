@@ -1,0 +1,27 @@
+﻿@model KutuphaneOtomasyonu.Models.Entity.Yazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<title>KÜTÜPHANE OTOMASYON SİSTEMİ</title>
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(y => y.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.Ad)
+    </div>
+    <div style="margin-top:15px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(y => y.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y=>y.Soyad)
+    </div>
+    <div style="margin-top:15px">
+        <label>Yazar Hakkında</label>
+        @Html.TextAreaFor(y => y.Hakkında, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+</form>
+
